@@ -9,11 +9,7 @@ import twitter4j.conf.ConfigurationBuilder;
 
 
 public final class GetFriendIds {
-    /**
-     * Usage: java twitter4j.examples.friendsandfollowers.GetFriendsIDs [screen name]
-     *
-     * @param args message
-     */
+   
     public  void getFriendsIds(String[] args) {
     	
     	ConfigurationBuilder cb = new ConfigurationBuilder();

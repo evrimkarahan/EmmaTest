@@ -11,8 +11,11 @@ public class TwitTimesMain {
 		//SearchTwitter search = new SearchTwitter();
 		//search.getSearchTwitter(args);
 		
-		GetFriendIds friends = new GetFriendIds();
-		friends.getFriendsIds(args);
+		//GetFriendIds friends = new GetFriendIds();
+		//friends.getFriendsIds(args);
+		
+		SaveRawJSON rawdata = new SaveRawJSON();
+		rawdata.saveRawJson(args);
 
 	}
 
