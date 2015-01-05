@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="C:/Users/karahanc/Desktop/twittimes/twitter4j-4.0.2/lib/twitter4j-core-4.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/evrimkarahan/Downloads/twitter4j-4.0.2/lib/twitter4j-core-4.0.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
