@@ -14,8 +14,11 @@ public class TwitTimesMain {
 		//GetFriendIds friends = new GetFriendIds();
 		//friends.getFriendsIds(args);
 		
-		SaveRawJSON rawdata = new SaveRawJSON();
-		rawdata.saveRawJson(args);
+		//SaveRawJSON rawdata = new SaveRawJSON();
+		//rawdata.saveRawJson(args);
+		
+		AvailableTrends trends = new AvailableTrends();
+		trends.getTrends();
 
 	}
 
