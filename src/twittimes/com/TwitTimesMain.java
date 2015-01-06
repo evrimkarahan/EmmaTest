@@ -17,8 +17,11 @@ public class TwitTimesMain {
 		//SaveRawJSON rawdata = new SaveRawJSON();
 		//rawdata.saveRawJson(args);
 		
-		AvailableTrends trends = new AvailableTrends();
-		trends.getTrends();
+		//AvailableTrends trends = new AvailableTrends();
+		//trends.getTrends();
+		
+		SearchUsers userlist = new SearchUsers();
+		userlist.searchUsers(args);
 
 	}
 

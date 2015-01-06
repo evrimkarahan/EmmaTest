@@ -21,6 +21,7 @@ public class SearchTwitter {
     	Twitter twitter = tf.getInstance();
     	
     	
+    	
         if (args.length < 1) {
             System.out.println("java twitter4j.examples.search.SearchTweets [query]");
             System.exit(-1);
