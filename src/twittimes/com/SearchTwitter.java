@@ -7,11 +7,7 @@ import java.util.List;
 
 
 public class SearchTwitter {
-    /**
-     * Usage: java twitter4j.examples.search.SearchTweets [query]
-     *
-     * @param args search query
-     */
+
     public void getSearchTwitter(String[] args) {
     	
     	ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -24,6 +20,7 @@ public class SearchTwitter {
     	TwitterFactory tf = new TwitterFactory(cb.build());
     	Twitter twitter = tf.getInstance();
     	
+    	
         if (args.length < 1) {
             System.out.println("java twitter4j.examples.search.SearchTweets [query]");
             System.exit(-1);
@@ -35,7 +32,11 @@ public class SearchTwitter {
                 result = twitter.search(query);
                 List<Status> tweets = result.getTweets();
                 for (Status tweet : tweets) {
-                    System.out.println("@" + tweet.getUser().getScreenName() + " - " + tweet.getText() + " fav count "+ tweet.getFavoriteCount() + " retweet count " + tweet.getRetweetCount());
+                    System.out.println("@" + tweet.getUser().getScreenName() + " - " + 
+                    					tweet.getText() + " fav count "+ tweet.getFavoriteCount() + 
+                    					" retweet count " + tweet.getRetweetCount() +
+                    					" tweet id -" + tweet.getId() + " tweet location - "+ tweet.getGeoLocation()
+                    					+ " hashtag - " + tweet.getHashtagEntities().toString() + " mention -" + tweet.getUserMentionEntities() );
                 }
             } while ((query = result.nextQuery()) != null);
             System.exit(0);
