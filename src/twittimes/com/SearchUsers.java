@@ -1,6 +1,11 @@
 package twittimes.com;
 
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
@@ -12,8 +17,8 @@ public class SearchUsers {
  *   Exact match searches are not supported.
  *   Only the first 1,000 matching results are available.
  */
-	
-	public void searchUsers(String[] args){
+	Connection connection;
+	public void searchUsers(String[] args) throws SQLException{
 		ConfigurationBuilder cb = new ConfigurationBuilder();
     	cb.setDebugEnabled(true)
     	  .setOAuthConsumerKey("4vMadT2ADh3I3nhHXyUFHiPzO")
@@ -41,6 +46,12 @@ public class SearchUsers {
                         // the user is protected
                         System.out.println("@" + user.getScreenName());
                     }
+                    connection = DriverManager.getConnection(DBUtils.clusterjdbc, DBUtils.username, DBUtils.password);
+                    Statement statement = connection.createStatement();
+                    String curr_query = "insert into users(twitter_id, name, lang) values (" + user.getId()  + ",'" + user.getScreenName() + "','"+ user.getLang() + "');";
+                    System.out.println(curr_query);
+                    statement.executeUpdate(curr_query);
+                    
                 }
                 page++;
             } while (users.size() != 0 && page < 50);

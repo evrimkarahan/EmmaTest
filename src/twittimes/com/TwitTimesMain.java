@@ -1,10 +1,12 @@
 package twittimes.com;
 
+import java.sql.SQLException;
+
 
 
 public class TwitTimesMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		
 
     	
@@ -22,6 +24,8 @@ public class TwitTimesMain {
 		
 		SearchUsers userlist = new SearchUsers();
 		userlist.searchUsers(args);
+		
+		
 
 	}
 
