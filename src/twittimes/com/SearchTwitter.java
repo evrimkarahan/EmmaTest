@@ -21,13 +21,9 @@ public class SearchTwitter {
     	Twitter twitter = tf.getInstance();
     	
     	
-    	
-        if (args.length < 1) {
-            System.out.println("java twitter4j.examples.search.SearchTweets [query]");
-            System.exit(-1);
-        }
         try {
-            Query query = new Query(args[0]);
+        	String queryString= "'#EnBüyükTeröristNetanyahu favorite_count>2";
+            Query query = new Query(queryString);
             QueryResult result;
             do {
                 result = twitter.search(query);
@@ -37,7 +33,7 @@ public class SearchTwitter {
                     					tweet.getText() + " fav count "+ tweet.getFavoriteCount() + 
                     					" retweet count " + tweet.getRetweetCount() +
                     					" tweet id -" + tweet.getId() + " tweet location - "+ tweet.getGeoLocation()
-                    					+ " hashtag - " + tweet.getHashtagEntities().toString() + " mention -" + tweet.getUserMentionEntities() );
+                    					+ " lang -" + tweet.getLang() );
                 }
             } while ((query = result.nextQuery()) != null);
             System.exit(0);

@@ -26,7 +26,7 @@ public void getTrends() {
         		
         	System.out.println("Showing available trends");
             for (Location location : locations) {
-                System.out.println(location.getName() + " (woeid:" + location.getWoeid() + ")");
+                //System.out.println(location.getName() + " (woeid:" + location.getWoeid() + ")");
                 if(location.getWoeid() == 23424969 ){
 	                for(Trend trend:twitter.getPlaceTrends(location.getWoeid()).getTrends()){
 	                	System.out.println("trend topic -" + trend.getName() + " trend URL -" + trend.getURL() +"\n");
