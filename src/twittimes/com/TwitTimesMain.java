@@ -1,17 +1,15 @@
 package twittimes.com;
 
-import java.sql.SQLException;
-
 
 
 public class TwitTimesMain {
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) {
 		
 
     	
-		SearchTwitter search = new SearchTwitter();
-		search.getSearchTwitter(args);
+		//SearchTwitter search = new SearchTwitter();
+		//search.getSearchTwitter(args);
 		
 		//GetFriendIds friends = new GetFriendIds();
 		//friends.getFriendsIds(args);
@@ -23,9 +21,7 @@ public class TwitTimesMain {
 		//trends.getTrends();
 		
 		//SearchUsers userlist = new SearchUsers();
-//		userlist.searchUsers(args);
-		
-		
+		//userlist.searchUsers(args);
 
 	}
 

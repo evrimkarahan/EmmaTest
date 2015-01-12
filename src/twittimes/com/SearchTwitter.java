@@ -22,18 +22,20 @@ public class SearchTwitter {
     	
     	
         try {
-        	String queryString= "'#EnBüyükTeröristNetanyahu favorite_count>2";
+        	String queryString= "#EnBüyükTeröristNetanyahu";
             Query query = new Query(queryString);
             QueryResult result;
             do {
                 result = twitter.search(query);
                 List<Status> tweets = result.getTweets();
                 for (Status tweet : tweets) {
-                    System.out.println("@" + tweet.getUser().getScreenName() + " - " + 
-                    					tweet.getText() + " fav count "+ tweet.getFavoriteCount() + 
-                    					" retweet count " + tweet.getRetweetCount() +
-                    					" tweet id -" + tweet.getId() + " tweet location - "+ tweet.getGeoLocation()
-                    					+ " lang -" + tweet.getLang() );
+                	if(tweet.getRetweetCount()>20){
+	                    System.out.println("@" + tweet.getUser().getScreenName() + " - " + 
+	                    					tweet.getText() + " fav count "+ tweet.getFavoriteCount() + 
+	                    					" retweet count " + tweet.getRetweetCount() +
+	                    					" tweet id -" + tweet.getId() + " tweet location - "+ tweet.getGeoLocation()
+	                    					+ " lang -" + tweet.getLang() );
+                	}
                 }
             } while ((query = result.nextQuery()) != null);
             System.exit(0);
