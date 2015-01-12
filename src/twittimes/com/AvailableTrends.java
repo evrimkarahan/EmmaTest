@@ -1,12 +1,14 @@
 
 package twittimes.com;
 
+import java.util.ArrayList;
+
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
 
 public class AvailableTrends {
-public void getTrends() {
+public Trend[] getTrends() {
     	
     	ConfigurationBuilder cb = new ConfigurationBuilder();
     	cb.setDebugEnabled(true)
@@ -23,23 +25,25 @@ public void getTrends() {
         	ResponseList<Location> locations;
         	locations = twitter.getAvailableTrends();
         	
-        		
-        	System.out.println("Showing available trends");
+        	//tr = 23424969
+        	Trend[] trends = twitter.getPlaceTrends(23424969).getTrends();	
+        	/*System.out.println("Showing available trends");
             for (Location location : locations) {
                 //System.out.println(location.getName() + " (woeid:" + location.getWoeid() + ")");
                 if(location.getWoeid() == 23424969 ){
-	                for(Trend trend:twitter.getPlaceTrends(location.getWoeid()).getTrends()){
+	                for(Trend trend:trends){
 	                	System.out.println("trend topic -" + trend.getName() + " trend URL -" + trend.getURL() +"\n");
 	                }
                 }
             }
             System.out.println("done.");
-            System.exit(0);
+            */
+            return trends;
             
         } catch (TwitterException te) {
         	te.printStackTrace();
             System.out.println("Failed to get trends: " + te.getMessage());
-            System.exit(-1);
+            return null;
         }
     }
 }
